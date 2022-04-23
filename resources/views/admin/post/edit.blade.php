@@ -29,7 +29,7 @@
 
                 <div class="form-group">
                     @foreach ($tags as $tag)
-                        @if($errors->any())
+                        @if($errors->any()) {{-- se non si sono verificati errori nell'inserimento dati --}}
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="tag_{{$tag->id}}" name="tags[]" value="{{$tag->id}}" {{in_array($tag->id, old('tags')) ? 'checked' : ''}}>
                                 <label class="custom-control-label" for="tag_{{$tag->id}}">{{$tag->name}}</label>

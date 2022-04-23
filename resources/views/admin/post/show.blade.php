@@ -7,6 +7,12 @@
             
             <h1>TITLE: {{$post->title}}</h1>
 
+            @if ($diffInDays = 1)
+                <p><small>Il post è stato scritto 1 giorno fa</small></p>
+            @else
+                <p><small>Il post è stato scritto {{$diffInDays}} giorni fa</small></p>
+            @endif
+
             <p><strong>SLUG: </strong><small>{{$post->slug}}</small></p>
 
             <p><strong>CATEGORY: </strong>{{ !empty($post->category) ? $post->category->name : 'ND' }}</p>
